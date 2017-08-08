@@ -13,8 +13,7 @@ class Conta{
 	public function retirar($valor){
 		if($this->saldo>=$valor){
 			echo "valor do saque aceito";
-			$this->saldo -=$valor;
-			printSaldo();
+			$this->saldo -=$valor;			
 			return true;			
 		}
 		else{
@@ -24,7 +23,7 @@ class Conta{
 	}
 
 	public function depositar($valor){
-		$this->saldo = $valor;
+		$this->saldo += $valor;
 	}
 
 	public function transferir($conta1, $conta2, $valor){
@@ -42,14 +41,16 @@ class Conta{
 		}
 	}
 
-	public function obterSaldo(){$this->saldo;}
+	public function obterSaldo(){		
+		return $this->saldo;
+	}
 
 	public function printDados(){		
-		echo "<br>Agência: ".			$this->agencia;
-		echo "<br>Código: ".			$this->codigo;
-		echo "<br>Titular: ".			$this->titular;
-		echo "<br>Data de Criação: ".	$this->dataCriacao;
-		echo "<br>Saldo: ".				$this->saldo;
+		echo "Agência: ".			$this->agencia;
+		echo ", Código: ".			$this->codigo;
+		echo ", Titular: ".			$this->titular;
+		echo ", Data de Criação: ".	$this->dataCriacao;
+		echo ", Saldo: ".				$this->saldo;
 	}
 
 	/* metodos de saida */
@@ -71,14 +72,12 @@ class ContaCorrente extends Conta{
 	public function retirar($valor){
 		if($this->saldo>=$valor){
 			echo "valor do saque aceito";
-			$this->saldo -=$valor;
-			printSaldo();
+			$this->saldo -=$valor;			
 			return true;			
 		}
 		elseif ( ($this->saldo +$this->limite) >= $valor) {
 			echo "valor do saque aceito, você usou o limite";
-			$this->saldo -=$valor;
-			printSaldo();
+			$this->saldo -=$valor;			
 			return true;					
 		}
 		else{
@@ -90,6 +89,4 @@ class ContaCorrente extends Conta{
 	public function verificarLimite(){ 
 		return $this->limite - $obterSaldo();
 	}
-
-
 }

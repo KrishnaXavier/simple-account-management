@@ -1,7 +1,8 @@
 <?php
-$ar = [
-		["v00", "v01", "v03"], 
-		["v20", "v21", "v23"],
-		["v30", "v31", "v33"]
-	];
-print_r($ar);
+require "classes/Conta.php";
+
+$c1 = new Conta("age11", "cod90", "ferreira", "12/12/2012", 10.000);
+
+echo "Dados: ".$c1->printDados();
+
+echo "Saldo: ".$c1->obterSaldo();
