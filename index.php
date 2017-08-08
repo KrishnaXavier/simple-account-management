@@ -186,7 +186,7 @@
 			url: 'app.php',
 			data: {c1:dadosC1(), c2:dadosC2(), acao:acao, conta:conta},	
 			type: 'POST',
-			success:function(data){
+			success:function(data){				
 				$('.aviso').html(data);
 			}								
 		});
@@ -205,8 +205,8 @@
 		$('input[name="c1-data"]').val(r(30, 1)+"/"+r(11, 1)+"/"+r(13, 2004));
 		$('input[name="c2-data"]').val(r(30, 1)+"/"+r(11, 1)+"/"+r(13, 2004));
 
-		$('input[name="c1-saldo"]').val(r(10000, 5));
-		$('input[name="c2-saldo"]').val(r(10000, 5));		
+		$('input[name="c1-saldo"]').val(r(60, 5));
+		$('input[name="c2-saldo"]').val(r(60, 5));		
 
 		$('input[name="c1-limite"]').val(r(100, 50));
 		$('input[name="c2-limite"]').val(r(100, 50));

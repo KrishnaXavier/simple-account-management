@@ -12,12 +12,12 @@ class Conta{
 
 	public function retirar($valor){
 		if($this->saldo>=$valor){
-			echo "valor do saque aceito";
+			echo "valor da ação foi aceito";
 			$this->saldo -=$valor;			
 			return true;			
 		}
 		else{
-			echo "valor do saque recusado";
+			echo "valor da ação foi recusado";
 			return false;
 		}	
 	}
@@ -71,17 +71,17 @@ class ContaCorrente extends Conta{
 
 	public function retirar($valor){
 		if($this->saldo>=$valor){
-			echo "valor do saque aceito";
+			echo "valor da ação foi aceito";
 			$this->saldo -=$valor;			
 			return true;			
 		}
 		elseif ( ($this->saldo +$this->limite) >= $valor) {
-			echo "valor do saque aceito, você usou o limite";
+			echo "valor da ação foi aceito, você usou o limite";
 			$this->saldo -=$valor;			
 			return true;					
 		}
 		else{
-			echo "valor do saque recusado";
+			echo "valor da ação foi recusado";
 			return false;
 		}	
 	}

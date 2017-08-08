@@ -102,4 +102,6 @@ function processos($c1, $dc1, $c2, $dc2){
 
 	echo "<br>Mais informações da conta 2: ";
 	$c2->printDados();
+
+	echo "<br>IMPORTANTE: os dados não são atualizados no formulario, atualize os dados acima no formulario";
 }
