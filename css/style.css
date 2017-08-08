@@ -1,0 +1,16 @@
+nav{
+	background-color: #8589d6 !important;
+}
+
+.aviso{
+	font-size: 1em;
+	color: red;
+}
+
+.btn-adicionar-evento{	
+	margin-top: 60px;
+}
+
+.btn-adicionar-evento a{
+	background-color: #8589d6 !important;
+}
